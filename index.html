@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>מחזור משכנתה - Maslul Mashkantaot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; background: #f4f4f4; direction: rtl; }
+        header, section, footer { padding: 40px 20px; }
+        .hero { background: url('https://images.unsplash.com/photo-1560185127-6ed189bf03ab?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat; color: white; text-align: center; padding: 100px 20px; position: relative; }
+        .hero::before { content: ''; position: absolute; top:0; right:0; bottom:0; left:0; background: rgba(1, 43, 58, 0.6); }
+        .hero h1, .hero p { position: relative; z-index: 2; }
+        .hero h1 { font-size: 36px; margin-bottom: 10px; }
+        .hero p { font-size: 18px; margin-bottom: 20px; }
+        .btn { background: #4caf50; color: white; padding: 12px 24px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; text-decoration: none; display: inline-block; }
+        .section-title { text-align: center; font-size: 28px; color: #012b3a; margin-bottom: 30px; }
+        .pain-points, .solution ul, .faq { max-width: 900px; margin: 0 auto; }
+        .pain-points div, .solution ul li, .testimonial, .faq-item { background: white; padding: 15px; margin-bottom: 10px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .solution ul li { list-style: none; }
+        .testimonials, .faq { background: #e9f5fb; }
+        .testimonial img { border-radius: 50%; width: 60px; height: 60px; float: right; margin-left: 10px; }
+        .testimonial p { margin: 0; }
+        .form-section { background: #012b3a; color: white; text-align: center; }
+        .form-section input, .form-section button { padding: 10px; margin: 5px; font-size: 16px; width: 90%; max-width: 400px; }
+        .form-section input { border: none; border-radius: 4px; }
+        .form-section button { background: #4caf50; color: white; border: none; border-radius: 4px; }
+        .final-cta { background: #0288d1; color: white; text-align: center; }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <h1>❌ עדיין משלם את אותה המשכנתה שלקחת לפני שנים?</h1>
+    <p>💡 אולי אתה מפסיד עשרות אלפי שקלים – בלי לדעת בכלל.</p>
+    <a href="#form" class="btn">בדקו עכשיו (חינם)</a>
+</header>
+
+<section class="pain-points">
+    <h2 class="section-title">מה עובר על המשכנתה שלך?</h2>
+    <div>📈 הריבית לא עודכנה כבר שנים</div>
+    <div>💸 ההחזר החודשי חונק</div>
+    <div>⌛ אתה משלם – והקרן בקושי זזה</div>
+    <div>🏦 והבנק? הוא לא יגיד לך מילה</div>
+</section>
+
+<section class="solution">
+    <h2 class="section-title">מחזור משכנתה – הדרך שלך לחסוך</h2>
+    <ul>
+        <li>✅ הקטנת החזר חודשי</li>
+        <li>✅ חיסכון של אלפי שקלים בשנה</li>
+        <li>✅ קיצור התקופה</li>
+        <li>✅ שליטה מחודשת בהתחייבויות</li>
+    </ul>
+</section>
+
+<section class="testimonials">
+    <h2 class="section-title">לקוחות מספרים</h2>
+    <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/men/1.jpg">
+        <p>"חסכו לי 680 ₪ בחודש ו־5 שנים מהמסלול!" – אייל</p>
+    </div>
+    <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/2.jpg">
+        <p>"היינו בטוחים שהריבית טובה. עכשיו אנחנו רגועים." – דנה</p>
+    </div>
+    <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/men/3.jpg">
+        <p>"חסכנו מעל 100 אלף ש"ח – וזה היה פשוט!" – שי ונופר</p>
+    </div>
+</section>
+
+<section class="form-section" id="form">
+    <h2>🎁 בדיקת משכנתה + מדריך חינם</h2>
+    <form>
+        <input type="text" placeholder="שם מלא" required>
+        <input type="tel" placeholder="טלפון" required>
+        <input type="text" placeholder="שנת לקיחת המשכנתה">
+        <br>
+        <button type="submit">בדקו עכשיו – חינם</button>
+    </form>
+</section>
+
+<section class="faq">
+    <h2 class="section-title">שאלות נפוצות</h2>
+    <div class="faq-item"><strong>מה זה מחזור משכנתה?</strong> תהליך בו מחליפים את תנאי המשכנתה שלך לפי השוק כיום.</div>
+    <div class="faq-item"><strong>זה עולה משהו?</strong> לא. הבדיקה הראשונית חינמית.</div>
+    <div class="faq-item"><strong>הבנק לא מציע לי את זה?</strong> לא. זה לא האינטרס של הבנק.</div>
+    <div class="faq-item"><strong>כמה זמן זה לוקח?</strong> בדיקה – עד 48 שעות. תהליך מלא – כשבועיים בממוצע.</div>
+</section>
+
+<section class="final-cta">
+    <h2>הרווחים של הבנק – זה מה שאתה מפסיד</h2>
+    <p>עצור לרגע. תן לנו לבדוק. זה לא עולה כלום – ויכול לחסוך המון.</p>
+    <a href="#form" class="btn">בדיקה חינמית עכשיו</a>
+</section>
+
+</body>
+</html>
