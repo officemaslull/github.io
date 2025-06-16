@@ -1,99 +1,1306 @@
+import React, { useState, useEffect } from 'react';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { 
+  TrendingDown, 
+  DollarSign, 
+  Calculator,
+  Shield,
+  Clock,
+  Users,
+  CheckCircle,
+  AlertTriangle,
+  Phone,
+  Mail,
+  ArrowLeft,
+  Star,
+  Zap,
+  Target,
+  Award,
+  Building
+} from 'lucide-react';
+import { motion } from 'framer-motion';
 
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <title>מחזור משכנתה - Maslul Mashkantaot</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; background: #f4f4f4; direction: rtl; }
-        header, section, footer { padding: 40px 20px; }
-        .hero { background: url('https://images.unsplash.com/photo-1560185127-6ed189bf03ab?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat; color: white; text-align: center; padding: 100px 20px; position: relative; }
-        .hero::before { content: ''; position: absolute; top:0; right:0; bottom:0; left:0; background: rgba(1, 43, 58, 0.6); }
-        .hero h1, .hero p { position: relative; z-index: 2; }
-        .hero h1 { font-size: 36px; margin-bottom: 10px; }
-        .hero p { font-size: 18px; margin-bottom: 20px; }
-        .btn { background: #4caf50; color: white; padding: 12px 24px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; text-decoration: none; display: inline-block; }
-        .section-title { text-align: center; font-size: 28px; color: #012b3a; margin-bottom: 30px; }
-        .pain-points, .solution ul, .faq { max-width: 900px; margin: 0 auto; }
-        .pain-points div, .solution ul li, .testimonial, .faq-item { background: white; padding: 15px; margin-bottom: 10px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .solution ul li { list-style: none; }
-        .testimonials, .faq { background: #e9f5fb; }
-        .testimonial img { border-radius: 50%; width: 60px; height: 60px; float: right; margin-left: 10px; }
-        .testimonial p { margin: 0; }
-        .form-section { background: #012b3a; color: white; text-align: center; }
-        .form-section input, .form-section button { padding: 10px; margin: 5px; font-size: 16px; width: 90%; max-width: 400px; }
-        .form-section input { border: none; border-radius: 4px; }
-        .form-section button { background: #4caf50; color: white; border: none; border-radius: 4px; }
-        .final-cta { background: #0288d1; color: white; text-align: center; }
-    </style>
-</head>
-<body>
+import Hero from '../components/mortgage/Hero';
+import ProblemAwareness from '../components/mortgage/ProblemAwareness';
+import ValueCalculator from '../components/mortgage/ValueCalculator';
+import SocialProof from '../components/mortgage/SocialProof';
+import ProcessSteps from '../components/mortgage/ProcessSteps';
+import TrustSignals from '../components/mortgage/TrustSignals';
+import ContactForm from '../components/mortgage/ContactForm';
+import FAQ from '../components/mortgage/FAQ';
 
-<header class="hero">
-    <h1>❌ עדיין משלם את אותה המשכנתה שלקחת לפני שנים?</h1>
-    <p>💡 אולי אתה מפסיד עשרות אלפי שקלים – בלי לדעת בכלל.</p>
-    <a href="#form" class="btn">בדקו עכשיו (חינם)</a>
-</header>
+export default function MortgageRefinance() {
+  const [isVisible, setIsVisible] = useState(false);
 
-<section class="pain-points">
-    <h2 class="section-title">מה עובר על המשכנתה שלך?</h2>
-    <div>📈 הריבית לא עודכנה כבר שנים</div>
-    <div>💸 ההחזר החודשי חונק</div>
-    <div>⌛ אתה משלם – והקרן בקושי זזה</div>
-    <div>🏦 והבנק? הוא לא יגיד לך מילה</div>
-</section>
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
-<section class="solution">
-    <h2 class="section-title">מחזור משכנתה – הדרך שלך לחסוך</h2>
-    <ul>
-        <li>✅ הקטנת החזר חודשי</li>
-        <li>✅ חיסכון של אלפי שקלים בשנה</li>
-        <li>✅ קיצור התקופה</li>
-        <li>✅ שליטה מחודשת בהתחייבויות</li>
-    </ul>
-</section>
-
-<section class="testimonials">
-    <h2 class="section-title">לקוחות מספרים</h2>
-    <div class="testimonial">
-        <img src="https://randomuser.me/api/portraits/men/1.jpg">
-        <p>"חסכו לי 680 ₪ בחודש ו־5 שנים מהמסלול!" – אייל</p>
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* Hero Section */}
+      <Hero />
+      
+      {/* Problem Awareness */}
+      <ProblemAwareness />
+      
+      {/* Value Calculator */}
+      <ValueCalculator />
+      
+      {/* Social Proof */}
+      <SocialProof />
+      
+      {/* Process Steps */}
+      <ProcessSteps />
+      
+      {/* Trust Signals */}
+      <TrustSignals />
+      
+      {/* Contact Form */}
+      <ContactForm />
+      
+      {/* FAQ */}
+      <FAQ />
+      
+      {/* Footer CTA */}
+      <section className="py-16 bg-gradient-to-r from-amber-600 to-orange-600">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              אל תיתן לכסף שלך להישאר "קפוא" בבנק
+            </h2>
+            <p className="text-xl text-amber-100">
+              כל יום שעובר הוא כסף שאתה מפסיד
+            </p>
+            <Button 
+              size="lg" 
+              className="bg-white text-amber-600 hover:bg-amber-50 text-xl px-12 py-6 rounded-full font-bold shadow-2xl transform hover:scale-105 transition-all duration-300"
+            >
+              <Zap className="w-6 h-6 mr-3" />
+              קבל חישוב מיידי עכשיו
+            </Button>
+          </motion.div>
+        </div>
+      </section>
     </div>
-    <div class="testimonial">
-        <img src="https://randomuser.me/api/portraits/women/2.jpg">
-        <p>"היינו בטוחים שהריבית טובה. עכשיו אנחנו רגועים." – דנה</p>
-    </div>
-    <div class="testimonial">
-        <img src="https://randomuser.me/api/portraits/men/3.jpg">
-        <p>"חסכנו מעל 100 אלף ש"ח – וזה היה פשוט!" – שי ונופר</p>
-    </div>
-</section>
+  );
+}
 
-<section class="form-section" id="form">
-    <h2>🎁 בדיקת משכנתה + מדריך חינם</h2>
-    <form>
-        <input type="text" placeholder="שם מלא" required>
-        <input type="tel" placeholder="טלפון" required>
-        <input type="text" placeholder="שנת לקיחת המשכנתה">
-        <br>
-        <button type="submit">בדקו עכשיו – חינם</button>
-    </form>
-</section>
 
-<section class="faq">
-    <h2 class="section-title">שאלות נפוצות</h2>
-    <div class="faq-item"><strong>מה זה מחזור משכנתה?</strong> תהליך בו מחליפים את תנאי המשכנתה שלך לפי השוק כיום.</div>
-    <div class="faq-item"><strong>זה עולה משהו?</strong> לא. הבדיקה הראשונית חינמית.</div>
-    <div class="faq-item"><strong>הבנק לא מציע לי את זה?</strong> לא. זה לא האינטרס של הבנק.</div>
-    <div class="faq-item"><strong>כמה זמן זה לוקח?</strong> בדיקה – עד 48 שעות. תהליך מלא – כשבועיים בממוצע.</div>
-</section>
 
-<section class="final-cta">
-    <h2>הרווחים של הבנק – זה מה שאתה מפסיד</h2>
-    <p>עצור לרגע. תן לנו לבדוק. זה לא עולה כלום – ויכול לחסוך המון.</p>
-    <a href="#form" class="btn">בדיקה חינמית עכשיו</a>
-</section>
+import React, { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { 
+  TrendingDown, 
+  DollarSign, 
+  Zap,
+  ArrowDown,
+  Calculator
+} from 'lucide-react';
+import { motion } from 'framer-motion';
 
-</body>
-</html>
+export default function Hero() {
+  const [loanAmount, setLoanAmount] = useState('');
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center opacity-10" />
+      
+      {/* Floating Elements */}
+      <motion.div 
+        className="absolute top-1/4 left-1/4 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl"
+        animate={{ 
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.6, 0.3]
+        }}
+        transition={{ 
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      
+      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="space-y-8"
+        >
+          {/* Alert Badge */}
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
+          >
+            <Badge className="bg-red-600 text-white px-6 py-2 text-lg rounded-full mx-auto inline-flex items-center gap-2 shadow-lg">
+              <Zap className="w-5 h-5" />
+              התראה: אתה מפסיד כסף כל חודש!
+            </Badge>
+          </motion.div>
+
+          {/* Main Headline */}
+          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+            <span className="block">איך אתה </span>
+            <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+              זורק אלפי שקלים
+            </span>
+            <span className="block">לפח כל חודש?</span>
+          </h1>
+
+          {/* Sub-headline */}
+          <p className="text-2xl md:text-3xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            <span className="text-amber-400 font-bold">97%</span> מבעלי הדירות לא יודעים שהם יכולים לחסוך 
+            <span className="text-amber-400 font-bold"> ₪2,000-8,000 בחודש</span> עם מחזור משכנתא פשוט
+          </p>
+
+          {/* Value Proposition */}
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
+            <motion.div 
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <TrendingDown className="w-12 h-12 text-green-400 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-white mb-2">ריבית נמוכה יותר</h3>
+              <p className="text-slate-300">עד 2% פחות ריבית = אלפי שקלים חזרה לכיס שלך</p>
+            </motion.div>
+
+            <motion.div 
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Calculator className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-white mb-2">חישוב מיידי</h3>
+              <p className="text-slate-300">גלה תוך 2 דקות כמה אתה יכול לחסוך</p>
+            </motion.div>
+
+            <motion.div 
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <DollarSign className="w-12 h-12 text-amber-400 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-white mb-2">בדיקה ללא עלות</h3>
+              <p className="text-slate-300">גלה כמה תחסוך - ללא התחייבות</p>
+            </motion.div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="mt-16 space-y-6">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+              <Input
+                type="number"
+                placeholder="סכום המשכנתא הנוכחית"
+                value={loanAmount}
+                onChange={(e) => setLoanAmount(e.target.value)}
+                className="text-lg py-6 px-6 rounded-2xl bg-white/90 border-2 border-amber-400 text-slate-800 text-center"
+                dir="rtl"
+              />
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white text-xl px-12 py-6 rounded-2xl font-bold shadow-2xl transform hover:scale-105 transition-all duration-300 w-full md:w-auto"
+              >
+                <Calculator className="w-6 h-6 mr-3" />
+                חשב עכשיו!
+              </Button>
+            </div>
+            
+            <p className="text-slate-400 text-sm">
+              💡 הכנס את סכום המשכנתא שלך וגלה תוך שניות כמה אתה יכול לחסוך
+            </p>
+          </div>
+
+          {/* Scroll Indicator */}
+          <motion.div
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <ArrowDown className="w-8 h-8 text-amber-400" />
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+import React from 'react';
+import { Card, CardContent } from "@/components/ui/card";
+import { 
+  AlertTriangle,
+  TrendingUp,
+  Clock,
+  DollarSign,
+  Target
+} from 'lucide-react';
+import { motion } from 'framer-motion';
+
+export default function ProblemAwareness() {
+  const problems = [
+    {
+      icon: TrendingUp,
+      title: "הריבית שלך עלתה",
+      description: "אם לקחת משכנתא לפני 2020, סביר שהריבית שלך עלתה משמעותית",
+      impact: "תוספת של ₪1,500-4,000 לחודש",
+      color: "text-red-400"
+    },
+    {
+      icon: Clock,
+      title: "אתה משלם יותר מדי זמן",
+      description: "תקופת ההחזר הארוכה גורמת לך לשלם פי 2-3 מהסכום המקורי",
+      impact: "מאות אלפי שקלים מיותרים",
+      color: "text-orange-400"
+    },
+    {
+      icon: Target,
+      title: "בנקים לא יגידו לך",
+      description: "הבנק שלך לא מעוניין שתעבור למתחרה - גם אם זה יחסוך לך כסף",
+      impact: "אתה נשאר עם תנאים גרועים",
+      color: "text-amber-400"
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-slate-900 relative">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-orange-500" 
+             style={{
+               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+             }} 
+        />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center gap-3 bg-red-600/20 text-red-400 px-6 py-3 rounded-full mb-8 border border-red-500/30">
+            <AlertTriangle className="w-6 h-6" />
+            <span className="font-semibold text-lg">בדיקת מציאות</span>
+          </div>
+          
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            למה אתה עדיין משלם
+            <span className="block bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">
+              יותר מדי כסף?
+            </span>
+          </h2>
+          
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            רוב האנשים לא מודעים לעובדה הזו: <strong className="text-amber-400">השוק השתנה</strong>, 
+            והתנאים שלהם נשארו במקום. זה הזמן לעדכן.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {problems.map((problem, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+            >
+              <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 h-full">
+                <CardContent className="p-8 text-center">
+                  <div className="mb-6">
+                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-slate-700 to-slate-800 ${problem.color} mb-4`}>
+                      <problem.icon className="w-8 h-8" />
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    {problem.title}
+                  </h3>
+                  
+                  <p className="text-slate-300 text-lg mb-6 leading-relaxed">
+                    {problem.description}
+                  </p>
+                  
+                  <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-red-600/20 to-orange-600/20 ${problem.color} border border-current/30`}>
+                    <DollarSign className="w-5 h-5" />
+                    <span className="font-bold">{problem.impact}</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Shocking Statistic */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-16 text-center"
+        >
+          <div className="bg-gradient-to-r from-amber-600/20 to-orange-600/20 rounded-3xl p-12 border border-amber-500/30">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              עובדה מזעזעת:
+            </h3>
+            <p className="text-2xl md:text-3xl text-amber-400 font-bold mb-4">
+              משפחה ממוצעת מפסידה ₪180,000-400,000
+            </p>
+            <p className="text-xl text-slate-300">
+              במהלך חיי המשכנתא בגלל אי-עדכון תנאים 😱
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+
+import React, { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { 
+  Calculator,
+  TrendingDown,
+  DollarSign,
+  Calendar,
+  Zap,
+  ArrowRight
+} from 'lucide-react';
+import { motion } from 'framer-motion';
+
+export default function ValueCalculator() {
+  const [currentLoan, setCurrentLoan] = useState('');
+  const [currentRate, setCurrentRate] = useState('');
+  const [yearsLeft, setYearsLeft] = useState('');
+  const [results, setResults] = useState(null);
+
+  const calculateSavings = () => {
+    const loan = parseFloat(currentLoan.replace(/,/g, ''));
+    const rate = parseFloat(currentRate);
+    const years = parseFloat(yearsLeft);
+    
+    if (!loan || !rate || !years) return;
+
+    const newRate = Math.max(rate - 1.5, 2.5); // Simulated better rate
+    const currentMonthly = (loan * (rate/100/12)) / (1 - Math.pow(1 + rate/100/12, -years*12));
+    const newMonthly = (loan * (newRate/100/12)) / (1 - Math.pow(1 + newRate/100/12, -years*12));
+    
+    const monthlySavings = currentMonthly - newMonthly;
+    const totalSavings = monthlySavings * years * 12;
+
+    setResults({
+      currentMonthly: Math.round(currentMonthly),
+      newMonthly: Math.round(newMonthly),
+      monthlySavings: Math.round(monthlySavings),
+      totalSavings: Math.round(totalSavings),
+      newRate: newRate.toFixed(2)
+    });
+  };
+
+  return (
+    <section className="py-24 bg-gradient-to-br from-slate-800 to-slate-900 relative">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-5" />
+      
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
+          <div className="inline-flex items-center gap-3 bg-green-600/20 text-green-400 px-6 py-3 rounded-full mb-8 border border-green-500/30">
+            <Calculator className="w-6 h-6" />
+            <span className="font-semibold text-lg">מחשבון חיסכון אישי</span>
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            גלה כמה כסף אתה יכול
+            <span className="block bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+              לחסוך עכשיו
+            </span>
+          </h2>
+          
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+            מלא את הפרטים הבסיסיים וקבל חישוב מדויק של החיסכון הפוטנציאלי שלך
+          </p>
+        </motion.div>
+
+        <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+          <CardContent className="p-8">
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Calculator Form */}
+              <div className="space-y-6">
+                <div className="space-y-2">
+                  <Label className="text-white text-lg font-medium">סכום המשכנתא הנותר</Label>
+                  <Input
+                    type="text"
+                    placeholder="לדוגמה: 1,200,000"
+                    value={currentLoan}
+                    onChange={(e) => setCurrentLoan(e.target.value)}
+                    className="text-lg py-4 bg-white/90 border-2 border-slate-300 text-slate-800"
+                    dir="rtl"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label className="text-white text-lg font-medium">הריבית הנוכחית (%)</Label>
+                  <Input
+                    type="number"
+                    step="0.1"
+                    placeholder="לדוגמה: 4.5"
+                    value={currentRate}
+                    onChange={(e) => setCurrentRate(e.target.value)}
+                    className="text-lg py-4 bg-white/90 border-2 border-slate-300 text-slate-800"
+                    dir="rtl"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label className="text-white text-lg font-medium">כמה שנים נותרו</Label>
+                  <Input
+                    type="number"
+                    placeholder="לדוגמה: 18"
+                    value={yearsLeft}
+                    onChange={(e) => setYearsLeft(e.target.value)}
+                    className="text-lg py-4 bg-white/90 border-2 border-slate-300 text-slate-800"
+                    dir="rtl"
+                  />
+                </div>
+
+                <Button 
+                  onClick={calculateSavings}
+                  className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-xl py-6 rounded-2xl font-bold shadow-2xl transform hover:scale-105 transition-all duration-300"
+                >
+                  <Zap className="w-6 h-6 mr-3" />
+                  חשב את החיסכון שלי
+                </Button>
+              </div>
+
+              {/* Results */}
+              <div className="space-y-6">
+                {results ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6 }}
+                    className="space-y-6"
+                  >
+                    <h3 className="text-2xl font-bold text-green-400 text-center mb-6">
+                      💰 התוצאות שלך:
+                    </h3>
+
+                    <div className="bg-gradient-to-r from-green-600/20 to-emerald-600/20 rounded-2xl p-6 border border-green-500/30">
+                      <div className="text-center space-y-3">
+                        <p className="text-lg text-slate-300">חיסכון חודשי:</p>
+                        <p className="text-4xl font-bold text-green-400">
+                          ₪{results.monthlySavings.toLocaleString()}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-amber-600/20 to-orange-600/20 rounded-2xl p-6 border border-amber-500/30">
+                      <div className="text-center space-y-3">
+                        <p className="text-lg text-slate-300">חיסכון כולל:</p>
+                        <p className="text-3xl font-bold text-amber-400">
+                          ₪{results.totalSavings.toLocaleString()}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4 text-center">
+                      <div className="bg-red-600/20 rounded-xl p-4 border border-red-500/30">
+                        <p className="text-sm text-slate-300">תשלום נוכחי:</p>
+                        <p className="text-xl font-bold text-red-400">
+                          ₪{results.currentMonthly.toLocaleString()}
+                        </p>
+                      </div>
+                      <div className="bg-green-600/20 rounded-xl p-4 border border-green-500/30">
+                        <p className="text-sm text-slate-300">תשלום חדש:</p>
+                        <p className="text-xl font-bold text-green-400">
+                          ₪{results.newMonthly.toLocaleString()}
+                        </p>
+                      </div>
+                    </div>
+
+                    <Button className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white text-lg py-4 rounded-2xl font-bold">
+                      <ArrowRight className="w-5 h-5 mr-2" />
+                      קבל הצעה מחייבת עכשיו
+                    </Button>
+                  </motion.div>
+                ) : (
+                  <div className="bg-slate-700/30 rounded-2xl p-8 text-center border border-slate-600/30">
+                    <Calculator className="w-16 h-16 text-slate-500 mx-auto mb-4" />
+                    <p className="text-slate-400 text-lg">
+                      מלא את הפרטים כדי לראות את החיסכון הפוטנציאלי שלך
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+  );
+}
+
+import React from 'react';
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { 
+  Star,
+  Users,
+  TrendingUp,
+  Award,
+  Quote
+} from 'lucide-react';
+import { motion } from 'framer-motion';
+
+export default function SocialProof() {
+  const testimonials = [
+    {
+      name: "דניאל כהן",
+      city: "תל אביב",
+      savings: "4,200",
+      quote: "לא האמנתי שזה כל כך פשוט! חסכתי ₪4,200 בחודש ללא עמלות וללא טרחה",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    },
+    {
+      name: "רחל לוי",
+      city: "ירושלים",
+      savings: "2,800",
+      quote: "אחרי 3 שנים של חשיבה, סוף סוף עשיתי מחזור. הכי טוב שעשיתי השנה!",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    },
+    {
+      name: "יוסי אברהם",
+      city: "חיפה",
+      savings: "6,100",
+      quote: "הבנק שלי לא סיפר לי שיש תנאים טובים יותר. כעת אני חוסך ₪6,100 בחודש",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    }
+  ];
+
+  const stats = [
+    { number: "15,000+", label: "לקוחות מרוצים", icon: Users },
+    { number: "₪180M+", label: "נחסך ללקוחות", icon: TrendingUp },
+    { number: "4.9/5", label: "דירוג ממוצע", icon: Star },
+    { number: "95%", label: "מקבלים הצעה טובה יותר", icon: Award }
+  ];
+
+  return (
+    <section className="py-24 bg-slate-900">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Stats Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">
+            אלפי ישראלים כבר חוסכים
+            <span className="block bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+              מיליונים בשנה
+            </span>
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="bg-gradient-to-br from-amber-500/20 to-orange-600/20 rounded-2xl p-6 border border-amber-500/30">
+                  <stat.icon className="w-8 h-8 text-amber-400 mx-auto mb-3" />
+                  <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-slate-300 text-sm">{stat.label}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Testimonials */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+            >
+              <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 h-full">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-amber-400 fill-current" />
+                    ))}
+                  </div>
+
+                  <Quote className="w-8 h-8 text-slate-500 mb-4" />
+                  
+                  <p className="text-slate-300 text-lg mb-6 leading-relaxed">
+                    "{testimonial.quote}"
+                  </p>
+
+                  <div className="flex items-center gap-4">
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                    <div>
+                      <h4 className="text-white font-semibold">{testimonial.name}</h4>
+                      <p className="text-slate-400 text-sm">{testimonial.city}</p>
+                    </div>
+                    <Badge className="bg-green-600 text-white mr-auto">
+                      ₪{testimonial.savings}/חודש
+                    </Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Trust Indicators */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-16 text-center"
+        >
+          <div className="bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-3xl p-8 border border-blue-500/30">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              מה שהלקוחות שלנו אומרים:
+            </h3>
+            <p className="text-xl text-blue-400 font-bold mb-2">
+              "הדבר הכי חכם שעשיתי השנה"
+            </p>
+            <p className="text-lg text-slate-300">
+              ממוצע של <span className="text-amber-400 font-bold">₪3,400 חיסכון בחודש</span> ללקוח
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+
+
+import React from 'react';
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { 
+  Phone,
+  FileText,
+  Calculator,
+  CheckCircle,
+  Clock,
+  Shield,
+  Zap
+} from 'lucide-react';
+import { motion } from 'framer-motion';
+
+export default function ProcessSteps() {
+  const steps = [
+    {
+      icon: Phone,
+      title: "שיחת ייעוץ ראשונית",
+      description: "שיחה של 10 דקות לבדיקת הפוטנציאל שלך",
+      time: "10 דקות",
+      color: "from-blue-500 to-blue-600"
+    },
+    {
+      icon: FileText,
+      title: "איסוף מסמכים",
+      description: "נעזור לך להכין את כל המסמכים הנדרשים",
+      time: "יום אחד",
+      color: "from-purple-500 to-purple-600"
+    },
+    {
+      icon: Calculator,
+      title: "בדיקת הצעות מחיר",
+      description: "נבדוק עבורך הצעות מכל הבנקים הגדולים",
+      time: "2-3 ימים",
+      color: "from-amber-500 to-orange-600"
+    },
+    {
+      icon: CheckCircle,
+      title: "ביצוע המחזור",
+      description: "נלווה אותך לאורך כל התהליך עד הסיום",
+      time: "30 יום",
+      color: "from-green-500 to-emerald-600"
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-gradient-to-br from-slate-800 to-slate-900 relative">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-5" />
+      
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center gap-3 bg-green-600/20 text-green-400 px-6 py-3 rounded-full mb-8 border border-green-500/30">
+            <Zap className="w-6 h-6" />
+            <span className="font-semibold text-lg">תהליך פשוט ומהיר</span>
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            איך זה עובד?
+            <span className="block bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+              4 שלבים פשוטים
+            </span>
+          </h2>
+          
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            אנחנו נעשה את כל העבודה הקשה עבורך. רק תשב בנוח ותראה את החיסכון מגיע
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {steps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="relative"
+            >
+              <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 h-full relative overflow-hidden">
+                {/* Step Number */}
+                <div className="absolute top-4 right-4">
+                  <Badge className={`bg-gradient-to-r ${step.color} text-white text-lg px-3 py-1`}>
+                    {index + 1}
+                  </Badge>
+                </div>
+
+                <CardContent className="p-6 pt-16">
+                  <div className="text-center">
+                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${step.color} mb-6`}>
+                      <step.icon className="w-8 h-8 text-white" />
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-white mb-4">
+                      {step.title}
+                    </h3>
+                    
+                    <p className="text-slate-300 text-base mb-6 leading-relaxed">
+                      {step.description}
+                    </p>
+
+                    <div className="flex items-center justify-center gap-2">
+                      <Clock className="w-4 h-4 text-amber-400" />
+                      <span className="text-amber-400 font-semibold">{step.time}</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Connection Line */}
+              {index < steps.length - 1 && (
+                <div className="hidden lg:block absolute top-1/2 -left-4 w-8 h-0.5 bg-gradient-to-r from-amber-400 to-orange-500 transform -translate-y-1/2" />
+              )}
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Guarantee Section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-16 text-center"
+        >
+          <Card className="bg-gradient-to-r from-emerald-600/20 to-green-600/20 border-emerald-500/30 max-w-2xl mx-auto">
+            <CardContent className="p-8">
+              <Shield className="w-16 h-16 text-emerald-400 mx-auto mb-6" />
+              <h3 className="text-2xl font-bold text-white mb-4">
+                המודל שלנו: לא חסכת - לא שילמת
+              </h3>
+              <p className="text-xl text-emerald-400 font-semibold mb-4">
+                אנחנו מתחייבים לתוצאות!
+              </p>
+              <p className="text-lg text-slate-300">
+                התשלום עבור השירות מבוסס הצלחה בלבד. אם לא נצליח לחסוך לך כסף משמעותי, לא תשלם לנו כלל. הסיכון כולו עלינו.
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+
+import React from 'react';
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { 
+  Shield,
+  Award,
+  Building,
+  Users,
+  Lock,
+  FileText,
+  Star,
+  CheckCircle
+} from 'lucide-react';
+import { motion } from 'framer-motion';
+
+export default function TrustSignals() {
+  const credentials = [
+    {
+      icon: Building,
+      title: "רישוי משרד האוצר",
+      description: "מורשים על ידי המפקח על הבנקים",
+      badge: "רישיון מס' 123456"
+    },
+    {
+      icon: Shield,
+      title: "ביטוח אחריות מקצועית",
+      description: "מבוטח ב-5 מיליון ₪",
+      badge: "פוליסה פעילה"
+    },
+    {
+      icon: Star,
+      title: "דירוג מעולה",
+      description: "4.9/5 כוכבים ממעל 1,000 ביקורות",
+      badge: "Google Reviews"
+    },
+    {
+      icon: Award,
+      title: "פרס מקצועי",
+      description: "יועץ המשכנתאות של השנה 2023",
+      badge: "איגוד יועצי המשכנתא"
+    }
+  ];
+
+  const banks = [
+    "בנק הפועלים",
+    "בנק לאומי", 
+    "בנק מזרחי",
+    "בנק דיסקונט",
+    "בנק אוצר החייל",
+    "בנק יהב"
+  ];
+
+  const guarantees = [
+    {
+      icon: Lock,
+      title: "שמירה על הפרטיות",
+      description: "המידע שלך מוגן ברמת בטיחות בנקאית"
+    },
+    {
+      icon: FileText,
+      title: "שקיפות מלאה",
+      description: "נסביר לך כל שלב ולא נסתיר עמלות"
+    },
+    {
+      icon: CheckCircle,
+      title: "ללא התחייבות",
+      description: "קבל הצעה ותחליט מתי שנוח לך"
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-slate-900 relative">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            למה לבחור בנו?
+            <span className="block bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+              אמינות ומקצועיות
+            </span>
+          </h2>
+          
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            אנחנו לא עוד חברת ייעוץ. אנחנו המומחים המובילים במחזורי משכנתא בישראל
+          </p>
+        </motion.div>
+
+        {/* Credentials */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {credentials.map((credential, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 h-full">
+                <CardContent className="p-6 text-center">
+                  <div className="bg-gradient-to-br from-blue-500/20 to-cyan-600/20 rounded-2xl p-4 mb-4 inline-block">
+                    <credential.icon className="w-8 h-8 text-blue-400" />
+                  </div>
+                  
+                  <h3 className="text-lg font-bold text-white mb-2">
+                    {credential.title}
+                  </h3>
+                  
+                  <p className="text-slate-300 text-sm mb-4">
+                    {credential.description}
+                  </p>
+
+                  <Badge className="bg-blue-600/20 text-blue-400 border border-blue-500/30">
+                    {credential.badge}
+                  </Badge>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bank Partners */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
+        >
+          <h3 className="text-2xl font-bold text-white text-center mb-8">
+            אנחנו עובדים עם כל הבנקים הגדולים
+          </h3>
+          
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              {banks.map((bank, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="bg-white/10 rounded-xl p-4 hover:bg-white/20 transition-colors duration-300">
+                    <Building className="w-8 h-8 text-slate-300 mx-auto mb-2" />
+                    <p className="text-slate-300 text-sm font-medium">{bank}</p>
+
+
+import React, { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import { 
+  Phone,
+  Mail,
+  Calendar,
+  Zap,
+  CheckCircle,
+  Clock,
+  ArrowRight
+} from 'lucide-react';
+import { motion } from 'framer-motion';
+
+export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    loanAmount: '',
+    currentRate: '',
+    preferredTime: '',
+    message: '',
+    consent: false
+  });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    // Here you would typically send the data to your backend
+    console.log('Form submitted:', formData);
+  };
+
+  const handleInputChange = (field, value) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  if (isSubmitted) {
+    return (
+      <section className="py-24 bg-gradient-to-br from-green-600 to-emerald-700" id="contact">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="bg-white rounded-3xl p-12 shadow-2xl"
+          >
+            <CheckCircle className="w-24 h-24 text-green-600 mx-auto mb-8" />
+            <h2 className="text-4xl font-bold text-slate-800 mb-6">
+              תודה רבה! 🎉
+            </h2>
+            <p className="text-xl text-slate-600 mb-8">
+              הפרטים שלך התקבלו בהצלחה. נחזור אליך תוך 15 דקות לקביעת זמן לשיחת ייעוץ ראשונית
+            </p>
+            <div className="flex items-center justify-center gap-3 text-green-600">
+              <Clock className="w-6 h-6" />
+              <span className="font-semibold text-lg">זמן תגובה ממוצע: 8 דקות</span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="py-24 bg-gradient-to-br from-slate-800 to-slate-900 relative" id="contact">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-5" />
+      
+      <div className="max-w-5xl mx-auto px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
+          <div className="inline-flex items-center gap-3 bg-amber-600/20 text-amber-400 px-6 py-3 rounded-full mb-8 border border-amber-500/30">
+            <Zap className="w-6 h-6" />
+            <span className="font-semibold text-lg">קבל הצעה מחייבת תוך 24 שעות</span>
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            מוכן להתחיל לחסוך?
+            <span className="block bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+              בוא נתחיל היום
+            </span>
+          </h2>
+          
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            מלא את הפרטים ויועץ מקצועי יחזור אליך תוך 15 דקות לשיחת ייעוץ ללא התחייבות
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+              <CardContent className="p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label className="text-white text-lg font-medium">שם מלא *</Label>
+                      <Input
+                        required
+                        value={formData.name}
+                        onChange={(e) => handleInputChange('name', e.target.value)}
+                        placeholder="השם שלך"
+                        className="text-lg py-4 bg-white/90 border-2 border-slate-300 text-slate-800"
+                        dir="rtl"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label className="text-white text-lg font-medium">טלפון *</Label>
+                      <Input
+                        required
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => handleInputChange('phone', e.target.value)}
+                        placeholder="050-1234567"
+                        className="text-lg py-4 bg-white/90 border-2 border-slate-300 text-slate-800"
+                        dir="rtl"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label className="text-white text-lg font-medium">אימייל</Label>
+                    <Input
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      placeholder="name@example.com"
+                      className="text-lg py-4 bg-white/90 border-2 border-slate-300 text-slate-800"
+                      dir="rtl"
+
+
+
+import React, { useState } from 'react';
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { 
+  ChevronDown,
+  ChevronUp,
+  HelpCircle
+} from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+export default function FAQ() {
+  const [openIndex, setOpenIndex] = useState(0);
+
+  const faqs = [
+    {
+      question: "כמה זמן לוקח תהליך מחזור המשכנתא?",
+      answer: "התהליך הממוצע לוקח 30-45 יום מהגשת הבקשה ועד סגירת העסקה. אנחנו נלווה אותך בכל שלב ונוודא שהתהליך יתקדם במהירות האפשרית."
+    },
+    {
+      question: "כמה עולה השירות?",
+      answer: "הבדיקה הראשונית ושיחת הייעוץ הן ללא עלות וללא התחייבות. במידה ותחליט להתקדם איתנו למחזור מלא, אנו גובים עמלת הצלחה שקופה וברורה, שתלויה בגובה החיסכון שנשיג עבורך. העמלה תוצג לך מראש - לא חסכת, לא שילמת!"
+    },
+    {
+      question: "מה קורה אם הבנק הנוכחי יתנגד?",
+      answer: "זה קורה לפעמים, אבל אנחנו מומחים בטיפול במצבים כאלה. יש לנו כלים משפטיים וניסיון רב בהתמודדות עם בנקים שמנסים לעכב את התהליך."
+    },
+    {
+      question: "האם אני צריך להחליף בנק?",
+      answer: "לא בהכרח! במקרים רבים הבנק הנוכחי שלך ישפר את התנאים כדי לא לאבד אותך. אנחנו נבדוק את כל האפשרויות ונמליץ על הדרך הטובה ביותר עבורך."
+    },
+    {
+      question: "מה הסיכוי שלי לקבל אישור?",
+      answer: "95% מהלקוחות שלנו מקבלים הצעה טובה יותר מהתנאים הנוכחיים שלהם. אם יש לך היסטוריית תשלומים טובה ויציבות פיננסית - הסיכויים מצוינים."
+    },
+    {
+      question: "האם זה משפיע על הדירוג האשראי שלי?",
+      answer: "לא! אנחנו מבצעים בדיקות ראשוניות שלא פוגעות בדירוג האשראי. רק כשנמצא הצעה מתאימה ותחליט להתקדם, נבצע בדיקת אשראי רשמית."
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-slate-900">
+      <div className="max-w-4xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center gap-3 bg-purple-600/20 text-purple-400 px-6 py-3 rounded-full mb-8 border border-purple-500/30">
+            <HelpCircle className="w-6 h-6" />
+            <span className="font-semibold text-lg">שאלות נפוצות</span>
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            יש לך שאלות?
+            <span className="block bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+              יש לנו תשובות
+            </span>
+          </h2>
+          
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+            ריכזנו עבורך את השאלות הנפוצות ביותר שאנחנו מקבלים מלקוחות
+          </p>
+        </motion.div>
+
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+            >
+              <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300">
+                <CardContent className="p-0">
+                  <Button
+                    variant="ghost"
+                    className="w-full p-6 text-right justify-between hover:bg-transparent"
+                    onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
+                  >
+                    <span className="text-lg font-semibold text-white text-right flex-1">
+                      {faq.question}
+                    </span>
+                    <div className="mr-4">
+                      {openIndex === index ? (
+                        <ChevronUp className="w-6 h-6 text-slate-400" />
+                      ) : (
+                        <ChevronDown className="w-6 h-6 text-slate-400" />
+                      )}
+                    </div>
+                  </Button>
+                  
+                  <AnimatePresence>
+                    {openIndex === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-6 pb-6">
+                          <p className="text-slate-300 text-lg leading-relaxed">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Contact CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-16 text-center"
+        >
+          <Card className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-purple-500/30">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-bold text-white mb-4">
+                לא מצאת את מה שחיפשת?
+              </h3>
+              <p className="text-xl text-purple-400 mb-6">
+                דבר איתנו ישירות ונענה על כל שאלה
+              </p>
+              <Button className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white text-lg px-8 py-4 rounded-2xl font-bold">
+                <HelpCircle className="w-5 h-5 mr-2" />
+                שאל אותנו הכל
+              </Button>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
