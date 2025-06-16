@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>מחזור משכנתא - חסוך כסף עכשיו</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מחזור משכנתא - חסוך כסף</title>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     body {
@@ -13,23 +13,19 @@
       color: white;
       direction: rtl;
     }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-    }
-    .hero {
-      text-align: center;
+    section {
       padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: auto;
     }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+    h1, h2, h3 {
+      font-weight: bold;
+      text-align: center;
     }
-    .hero p {
-      font-size: 1.25rem;
-      color: #fcd34d;
-      margin-bottom: 2rem;
+    .highlight {
+      background: linear-gradient(to right, #fbbf24, #f97316);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .form-group {
       margin-bottom: 1.5rem;
@@ -37,7 +33,6 @@
     label {
       display: block;
       margin-bottom: 0.5rem;
-      font-weight: bold;
     }
     input, textarea {
       width: 100%;
@@ -47,49 +42,116 @@
       font-size: 1rem;
     }
     button {
-      padding: 1rem 2rem;
+      display: block;
+      width: 100%;
+      padding: 1rem;
       background: linear-gradient(to right, #f59e0b, #ea580c);
       border: none;
       color: white;
       font-size: 1.2rem;
       font-weight: bold;
-      border-radius: 9999px;
+      border-radius: 2rem;
       cursor: pointer;
       transition: transform 0.2s ease;
     }
     button:hover {
       transform: scale(1.05);
     }
-    .note {
-      font-size: 0.875rem;
-      color: #cbd5e1;
-      text-align: center;
-      margin-top: 1rem;
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 1rem;
+      border: 1px solid rgba(255,255,255,0.1);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <section class="hero">
-      <h1>גלה כמה אתה מפסיד על המשכנתא שלך</h1>
-      <p>97% מהישראלים משלמים יותר מדי. אולי גם אתה.</p>
-      <form onsubmit="event.preventDefault(); alert('חישוב נשלח!');">
-        <div class="form-group">
-          <label for="loan">סכום המשכנתא (₪)</label>
-          <input type="number" id="loan" placeholder="לדוגמה: 1200000" required />
-        </div>
-        <div class="form-group">
-          <label for="rate">ריבית נוכחית (%)</label>
-          <input type="number" step="0.1" id="rate" placeholder="לדוגמה: 4.5" required />
-        </div>
-        <div class="form-group">
-          <label for="years">שנים שנותרו</label>
-          <input type="number" id="years" placeholder="לדוגמה: 18" required />
-        </div>
-        <button type="submit">חשב עכשיו</button>
-      </form>
-      <p class="note">💡 הנתונים שלך לא נשמרים. החישוב מתבצע בדפדפן בלבד.</p>
-    </section>
-  </div>
+  <section>
+    <h1>איך אתה <span class="highlight">זורק אלפי שקלים</span> לפח כל חודש?</h1>
+    <p style="text-align:center; font-size:1.2rem">97% מבעלי הדירות לא יודעים שהם יכולים לחסוך ₪2,000-8,000 בחודש עם מחזור משכנתא פשוט</p>
+  </section>
+
+  <section>
+    <h2>הבעיות הכי נפוצות</h2>
+    <div class="card">הריבית שלך עלתה — תוספת של ₪1,500-4,000 לחודש</div>
+    <div class="card">אתה משלם יותר מדי זמן — מאות אלפי שקלים מיותרים</div>
+    <div class="card">הבנק שומר אותך — לא אומר לך שאפשר לעבור ולחסוך</div>
+  </section>
+
+  <section>
+    <h2>מחשבון חיסכון</h2>
+    <form onsubmit="event.preventDefault(); calculate();">
+      <div class="form-group">
+        <label>סכום המשכנתא הנותר</label>
+        <input type="number" id="loan" placeholder="לדוגמה: 1200000" required>
+      </div>
+      <div class="form-group">
+        <label>ריבית נוכחית (%)</label>
+        <input type="number" id="rate" step="0.1" placeholder="לדוגמה: 4.5" required>
+      </div>
+      <div class="form-group">
+        <label>שנים שנותרו</label>
+        <input type="number" id="years" placeholder="לדוגמה: 18" required>
+      </div>
+      <button type="submit">חשב את החיסכון</button>
+    </form>
+    <div id="results" style="margin-top:2rem; text-align:center;"></div>
+  </section>
+
+  <section>
+    <h2>הלקוחות שלנו מספרים</h2>
+    <div class="card">"לא האמנתי שזה כל כך פשוט! חסכתי ₪4,200 בחודש" - דניאל כהן, תל אביב</div>
+    <div class="card">"סוף סוף עשיתי מחזור. הכי טוב שעשיתי השנה!" - רחל לוי, ירושלים</div>
+    <div class="card">"הבנק שלי לא סיפר לי. עכשיו אני חוסך ₪6,100!" - יוסי אברהם, חיפה</div>
+  </section>
+
+  <section>
+    <h2>התהליך פשוט:</h2>
+    <div class="card">1. שיחת ייעוץ טלפונית</div>
+    <div class="card">2. איסוף מסמכים</div>
+    <div class="card">3. בדיקת הצעות</div>
+    <div class="card">4. ביצוע בפועל תוך ליווי מלא</div>
+  </section>
+
+  <section>
+    <h2>צור קשר</h2>
+    <form onsubmit="event.preventDefault(); alert('הפרטים שלך נקלטו – נחזור אליך בקרוב');">
+      <div class="form-group">
+        <label>שם מלא</label>
+        <input type="text" required>
+      </div>
+      <div class="form-group">
+        <label>טלפון</label>
+        <input type="tel" required>
+      </div>
+      <div class="form-group">
+        <label>הודעה</label>
+        <textarea rows="4"></textarea>
+      </div>
+      <button type="submit">שלח</button>
+    </form>
+  </section>
+
+  <script>
+    function calculate() {
+      const loan = parseFloat(document.getElementById('loan').value);
+      const rate = parseFloat(document.getElementById('rate').value);
+      const years = parseFloat(document.getElementById('years').value);
+      if (!loan || !rate || !years) return;
+
+      const newRate = Math.max(rate - 1.5, 2.5);
+      const monthlyOld = (loan * (rate/100/12)) / (1 - Math.pow(1 + rate/100/12, -years*12));
+      const monthlyNew = (loan * (newRate/100/12)) / (1 - Math.pow(1 + newRate/100/12, -years*12));
+      const savings = (monthlyOld - monthlyNew) * years * 12;
+
+      document.getElementById('results').innerHTML = `
+        <h3>תוצאות:</h3>
+        <p>תשלום נוכחי חודשי: ₪${monthlyOld.toFixed(0)}</p>
+        <p>תשלום לאחר מחזור: ₪${monthlyNew.toFixed(0)}</p>
+        <p><strong>חיסכון כולל: ₪${savings.toFixed(0)}</strong></p>
+      `;
+    }
+  </script>
 </body>
 </html>
